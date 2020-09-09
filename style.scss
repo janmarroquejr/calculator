@@ -1,0 +1,75 @@
+$bg-canvas: #1e1e1e;
+$bg-primary: black;
+$bg-secondary: #282828;
+$bg-tertiary: #4e4e4e;
+$text-primary: #ececec;
+$bg-hover: #d9d9d9;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  background-color: $bg-canvas;
+}
+
+.calculator {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: minmax(130px, auto) repeat(5, 70px);
+
+  .screen {
+    background-color: $bg-primary;
+    grid-column: 1 / -1;
+    color: $text-primary;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    .previous {
+      font-size: 1.5rem;
+      transition: all 200ms ease;
+    }
+
+    .current {
+      font-size: 2.5rem;
+    }
+  }
+
+  .btn {
+    background-color: $bg-tertiary;
+    text-align: center;
+    border: 1px solid $bg-primary;
+    outline: none;
+    color: $text-primary;
+    font-size: 20px;
+  }
+
+  .btn:hover {
+    background-color: $bg-hover;
+    color: $bg-canvas;
+  }
+
+  .btn:active {
+    transform: scale(0.94);
+  }
+
+  .span-row-2 {
+    grid-row: span 2;
+  }
+
+  .span-col-2 {
+    grid-column: span 2;
+  }
+}
